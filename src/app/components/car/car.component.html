@@ -1,0 +1,55 @@
+<div class="container">
+  <!-- <br /> -->
+  <!-- <app-header></app-header> -->
+  <h4>
+    <mark>Auto: </mark>{{ name }} <small>{{ model }}</small>
+  </h4>
+  <div class="alert alert-success">
+    Vehicle characteristics:
+    <ul>
+      <li>
+        MaxSpeed: <strong>{{ speed }} km</strong>
+      </li>
+      <li>
+        Color car: <strong>{{ colors.car }}</strong>
+      </li>
+      <li>
+        Color salon: <strong>{{ colors.salon }}</strong>
+      </li>
+      <li>
+        Color koles: <strong>{{ colors.wheels }}</strong>
+      </li>
+    </ul>
+  </div>
+  <h5>Settings :</h5>
+  <form (submit)="addOpt(option.value)">
+    <div class="form-group">
+      <label for="option">Add new option</label>
+      <input
+        type="text"
+        id="option"
+        placeholder="Введите что-то"
+        class="form-control"
+        #option
+      />
+      <br />
+      <button type="submit" class="btn btn-outline-success">ADD</button>
+    </div>
+    <br />
+  </form>
+
+  <div class="alert alert-warning">
+    <ul>
+      <li *ngFor="let opt of options; let i = index">
+        {{ i + 1 }}-{{ opt
+        }}<button class="btn btn-warning btn-sm" (click)="deleteOpt(opt)">
+          x
+        </button>
+      </li>
+    </ul>
+  </div>
+  <h5>Select AUTO</h5>
+  <button class="btn btn-danger" (click)="carSelect('bmw')">BMW</button>
+  <button class="btn btn-success" (click)="carSelect('audi')">AUDI</button>
+  <button class="btn btn-info" (click)="carSelect('wv')">WV</button>
+</div>

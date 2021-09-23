@@ -1,0 +1,12 @@
+/* Add application styles & imports to this file! */
+* {
+  background-color: #24262e;
+  color: aliceblue;
+}
+.page-embed-header {
+  display: none !important;
+}
+.page-embed__header,
+.page-embed__header_mini {
+  display: none !important;
+}
